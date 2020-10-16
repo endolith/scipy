@@ -76,26 +76,6 @@ Convolutions (:mod:`scipy.fftpack.convolve`)
    init_convolution_kernel
    destroy_convolve_cache
 
-Chirp Z-transform (:mod:`scipy.fftpack.czt`)
-============================================
-
-.. module:: scipy.fftpack.czt
-
-.. autosummary::
-   :toctree: generated/
-
-   czt
-   zoomfft
-   scaledfft
-   CZT
-   ZoomFFT
-   ScaledFFT
-
-The functions are simpler to use, but less efficient, because they internally
-generate the same chirp signals with every call.  When using the same
-transform on multiple arrays of the same length, use the function-generating
-classes instead.
-
 """
 
 
@@ -115,7 +95,6 @@ from .basic import *
 from .pseudo_diffs import *
 from .helper import *
 from .realtransforms import *
-from .czt import *
 
 from scipy._lib._testutils import PytestTester
 test = PytestTester(__name__)
