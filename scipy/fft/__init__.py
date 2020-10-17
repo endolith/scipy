@@ -32,6 +32,7 @@ Fast Fourier Transforms (FFTs)
 
 Discrete Sin and Cosine Transforms (DST and DCT)
 ================================================
+
 .. autosummary::
    :toctree: generated/
 
@@ -44,24 +45,21 @@ Discrete Sin and Cosine Transforms (DST and DCT)
    dstn - N-D Discrete sine transform
    idstn - N-D Inverse discrete sine transform
 
-Chirp Z-transform (:mod:`scipy.fft.czt`)
+Chirp Z-transform and Zoom FFT
 ============================================
-
-.. module:: scipy.fft.czt
 
 .. autosummary::
    :toctree: generated/
 
    czt
    zoomfft
-   scaledfft
    CZT
    ZoomFFT
-   ScaledFFT
+   czt_points
 
 The functions are simpler to use, but less efficient, because they internally
 generate the same chirp signals with every call.  When using the same
-transform on multiple arrays of the same length, use the function-generating
+transform on many arrays of the same length, use the function-generating
 classes instead.
 
 Helper functions
@@ -101,17 +99,18 @@ from ._backend import (set_backend, skip_backend, set_global_backend,
                        register_backend)
 from numpy.fft import fftfreq, rfftfreq, fftshift, ifftshift
 from ._pocketfft.helper import set_workers, get_workers
-from .czt import *
+from .czt import czt, zoomfft, CZT, ZoomFFT, czt_points
 
 __all__ = [
-    'fft', 'ifft', 'fft2','ifft2', 'fftn', 'ifftn',
+    'fft', 'ifft', 'fft2', 'ifft2', 'fftn', 'ifftn',
     'rfft', 'irfft', 'rfft2', 'irfft2', 'rfftn', 'irfftn',
     'hfft', 'ihfft', 'hfft2', 'ihfft2', 'hfftn', 'ihfftn',
     'fftfreq', 'rfftfreq', 'fftshift', 'ifftshift',
     'next_fast_len',
     'dct', 'idct', 'dst', 'idst', 'dctn', 'idctn', 'dstn', 'idstn',
     'set_backend', 'skip_backend', 'set_global_backend', 'register_backend',
-    'get_workers', 'set_workers']
+    'get_workers', 'set_workers',
+    'czt', 'zoomfft', 'CZT', 'ZoomFFT', 'czt_points']
 
 
 from scipy._lib._testutils import PytestTester
