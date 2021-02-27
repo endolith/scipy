@@ -36,10 +36,10 @@ _LOG_PI = np.log(np.pi)
 _doc_random_state = """\
 random_state : {None, int, np.random.RandomState, np.random.Generator}, optional
     Used for drawing random variates.
-    If `seed` is `None` the `~np.random.RandomState` singleton is used.
-    If `seed` is an int, a new ``RandomState`` instance is used, seeded
-    with seed.
-    If `seed` is already a ``RandomState`` or ``Generator`` instance,
+    If `random_state` is `None` the `~np.random.RandomState` singleton is used.
+    If `random_state` is an int, a new ``RandomState`` instance is used, seeded
+    with this value.
+    If `random_state` is already a ``RandomState`` or ``Generator`` instance,
     then that object is used.
     Default is None.
 """
